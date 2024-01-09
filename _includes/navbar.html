@@ -1,4 +1,4 @@
-<nav class="flex justify-around border-solid border-0 border-b border-zinc-300 dark:border-zinc-800">
+<nav class="flex justify-around border-solid border-0 border-b border-zinc-300">
   {% for item in site.data.navigation %}
   {% capture href -%}
   {{ item.href | replace: '.md', '' | replace: '.html' '' | replace: 'index' '' }}
