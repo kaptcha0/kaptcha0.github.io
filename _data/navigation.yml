@@ -1,6 +1,6 @@
 - name: Home
-  href: index.html
+  href: /index.html
 - name: About
-  href: about.md
+  href: /about.md
 - name: Stats
-  href: stats.html
+  href: /stats.html
