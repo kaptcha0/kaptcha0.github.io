@@ -1,3 +1,0 @@
-# kaptcha_
-
-Welcome!

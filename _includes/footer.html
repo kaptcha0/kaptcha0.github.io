@@ -1,0 +1,10 @@
+<footer class="border-solid border-0 border-t border-zinc-300 ">
+  <ul class="list-none p-0">
+    {% for item in site.data.footer %}
+    <li>
+      <a class="no-underline text-zinc-500 font-normal" href="{{ item.url }}"><i class="{{ item.icon }}"></i>
+        {{item.text}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</footer>

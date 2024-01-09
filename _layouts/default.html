@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}} | kaptcha_</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://kit.fontawesome.com/077c0a44e8.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="prose prose-zinc dark:prose-invert bg-zinc-100 dark:bg-zinc-900 p-4 flex flex-col mx-auto">
+  <header>
+    <h1 class="mb-0 text-xl">J'C Kabunga</h1>
+    <h2 class="mt-0 text-lg text-zinc-500">kaptcha_</h2>
+
+    {% include navbar.html %}
+  </header>
+
+  <main>
+    <p>{{ content }}</p>
+  </main>
+
+  {% include footer.html %}
+</body>
+
+</html>

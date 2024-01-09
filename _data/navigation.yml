@@ -1,0 +1,6 @@
+- name: Home
+  href: index.html
+- name: About
+  href: about.md
+- name: Projects
+  href: projects.md

@@ -1,0 +1,12 @@
+<nav class="flex justify-around">
+  {% for item in site.data.navigation %}
+  {% capture href -%}
+  {% link {{ item.href }} -%}
+  {% endcapture %}
+
+  <a href="{{ href | remove: '.html' }}" {% if page.url==href %} class="no-underline pointer-events-none" {% endif %}>
+    {{ item.name }}
+  </a>
+
+  {% endfor %}
+</nav>

@@ -1,0 +1,37 @@
+plugins:
+  - jekyll-postcss
+  - jekyll-relative-links
+
+postcss:
+  cache: false
+
+defaults:
+  - 
+    scope:
+      path: "README.md"
+    values:
+      permalink: "index:output_ext"
+  - 
+    scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - .gitignore
+  - shell.nix
+  - postcss.config.js
+  - tailwind.config.js
+  - package.json
+  - pnpm-lock.yaml
+
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
