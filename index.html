@@ -2,12 +2,23 @@
 title: Home
 ---
 
-<div class="grid grid-cols-2 grid-flow-row items-center place-items-center">
-  <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bcf93875-fdb9-4dd5-bbdb-7937f04ddcfc"
+<div class="grid items-center place-items-center gap-2" id="badges">
+  <iframe style="grid-area: A;"
+    src="https://api.badgr.io/public/assertions/6SriFTWDTOuHfCCXCO2Uew?embedVersion=1&amp;embedWidth=330&amp;embedHeight=191&amp;identity__email=jjkabunga-16%40spotsylvania.k12.va.us"
+    title="Badge: TestOut Network Pro Certification" style="width: 330px; height: 191px; border: 0px;"></iframe>
+
+  <div style="grid-area: B" data-iframe-width="150" data-iframe-height="270"
+    data-share-badge-id="bcf93875-fdb9-4dd5-bbdb-7937f04ddcfc"
     data-share-badge-host="https://www.credly.com"></div>
   <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
-  <iframe
-    src="https://api.badgr.io/public/assertions/6SriFTWDTOuHfCCXCO2Uew?embedVersion=1&amp;embedWidth=330&amp;embedHeight=191&amp;identity__email=jjkabunga-16%40spotsylvania.k12.va.us"
-    title="Badge: TestOut Network Pro Certification" style="width: 330px; height: 191px; border: 0px;"></iframe>
+  <div style="grid-area: C;" data-iframe-width="150" data-iframe-height="270"
+    data-share-badge-id="e9f77fe0-7736-4bc1-b93b-7c2861e4f1f3" data-share-badge-host="https://www.credly.com">
+    </di>
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </div>
+<style>
+  #badges {
+    grid-template-areas: "A A" "B C";
+  }
+</style>
