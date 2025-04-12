@@ -1,0 +1,33 @@
+---
+import Footer from '../components/footer.astro';
+import Navbar from '../components/navbar.astro';
+
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html class='p-0 m-0 max-h-screen h-screen overflow-hidden' lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body
+		data-theme='light'
+		class='bg-light-shade dark:bg-dark-shade text-black dark:text-white transition-colors h-full p-0 m-0 overflow-hidden'>
+		<Navbar />
+		<main class='h-full ml-16 py-2 pr-4 relative z-0'>
+			<div class='frosted-glass h-full flex flex-col justify-between py-2 px-4'>
+				<slot />
+				<Footer />
+			</div>
+		</main>
+	</body>
+</html>

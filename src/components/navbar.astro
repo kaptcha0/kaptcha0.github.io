@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+import ThemeBtn from './theme-btn.svelte';
+
+const menuItems = [
+	{
+		name: 'About',
+		icon: 'lucide:circle-user',
+		href: '/about',
+	},
+	{
+		name: 'Projects',
+		icon: 'lucide:folder-git-2',
+		href: '/projects',
+	},
+	{
+		name: 'Blog',
+		icon: 'lucide:bookmark',
+		href: '/blog',
+	},
+	{
+		name: 'Resume',
+		icon: 'lucide:file-text',
+		href: '/resume',
+	},
+	{
+		name: 'Contact',
+		icon: 'lucide:mail',
+		href: '/contact',
+	},
+];
+---
+
+<div class='fixed z-10 top-0 left-0 h-full flex flex-col justify-between'>
+	<div
+		class='m-2 p-2 max-w-8 h-8 frosted-glass flex justify-center items-center'>
+		<a
+			class='hover:text-light-accent dark:hover:text-dark-accent hover:cursor-pointer transition-colors'
+			href='/'
+			aria-label='home'>
+			<Icon name='fe:home' />
+		</a>
+	</div>
+	<nav class='flex flex-col justify-center items-start frosted-glass m-2 p-2'>
+		<ul
+			class='list-none w-4 overflow-x-hidden overflow-y-visible hover:w-24 flex flex-col justify-center items-start space-y-4 transition-all'>
+			{
+				menuItems.map((mi) => (
+					<li class='clickable'>
+						<a
+							href={mi.href}
+							class='flex items-center place-self-end space-x-2'>
+							<Icon name={mi.icon} />
+							<span class='transition-all'>{mi.name}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+	<ThemeBtn
+		class='m-2 p-2 max-w-8 h-8 flex items-center justify-center frosted-glass'
+		client:load
+	/>
+</div>
