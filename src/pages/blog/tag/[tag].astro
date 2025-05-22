@@ -1,0 +1,50 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import TagComponent from '../../../components/tag.astro';
+import BaseLayout from '../../../layouts/base-layout.astro';
+import PostsList from '../../../components/posts-list.astro';
+
+export const getStaticPaths = (async () => {
+	const pages = await getCollection(
+		'blog',
+		({ data }) => data.published !== false
+	);
+
+	const tagMap = pages.reduce((acc, page) => {
+		page.data.tags.forEach((tag) => {
+			if (!acc[tag]) {
+				acc[tag] = [];
+			}
+			acc[tag].push(page);
+		});
+		return acc;
+	}, {});
+
+	const tagObjects = Object.entries(tagMap).map(([tag, posts]) => ({
+		params: { tag },
+		props: { posts },
+	}));
+
+	return tagObjects;
+}) satisfies GetStaticPaths;
+
+const { posts } = Astro.props; // Get the post from the props
+---
+
+<BaseLayout title={`Posts tagged with #${Astro.params.tag}`}>
+	<section class='prose'>
+		<h1 class='text-4xl font-bold mb-4'>
+			Posts tagged with #{Astro.params.tag}
+		</h1>
+		<p class='text-lg mb-6'>
+			Here are all the posts tagged with <TagComponent
+				tag={Astro.params.tag}
+			/>.
+		</p>
+		<PostsList posts={posts} />
+		<p class='text-sm text-center opacity-70 mt-4'>
+			Stay tuned for more updates and articles coming soon!
+		</p>
+	</section></BaseLayout
+>

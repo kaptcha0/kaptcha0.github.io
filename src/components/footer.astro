@@ -15,11 +15,12 @@ const icons = [
 ];
 ---
 
-<footer class='mt-auto opacity-50 text-sm w-full flex flex-col items-center'>
-	<p class=''>
+<footer
+	class='mt-auto opacity-50 text-sm w-full flex space-x-4 justify-center items-center'>
+	<p class='text-center'>
 		&copy; {new Date().getFullYear()} kaptcha_. All rights reserved.
 	</p>
-	<ul class='flex space-x-4 mt-2'>
+	<ul class='flex items-center justify-center space-x-4'>
 		{
 			icons.map((icon) => (
 				<li>

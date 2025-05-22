@@ -4,16 +4,6 @@ import ThemeBtn from './theme-btn.svelte';
 
 const menuItems = [
 	{
-		name: 'About',
-		icon: 'lucide:circle-user',
-		href: '/about',
-	},
-	{
-		name: 'Projects',
-		icon: 'lucide:folder-git-2',
-		href: '/projects',
-	},
-	{
 		name: 'Blog',
 		icon: 'lucide:bookmark',
 		href: '/blog',
@@ -22,11 +12,6 @@ const menuItems = [
 		name: 'Resume',
 		icon: 'lucide:file-text',
 		href: '/resume',
-	},
-	{
-		name: 'Contact',
-		icon: 'lucide:mail',
-		href: '/contact',
 	},
 ];
 ---
@@ -38,7 +23,7 @@ const menuItems = [
 			class='hover:text-light-accent dark:hover:text-dark-accent hover:cursor-pointer transition-colors'
 			href='/'
 			aria-label='home'>
-			<Icon name='fe:home' />
+			<Icon name='lucide:home' />
 		</a>
 	</div>
 	<nav class='flex flex-col justify-center items-start frosted-glass m-2 p-2'>

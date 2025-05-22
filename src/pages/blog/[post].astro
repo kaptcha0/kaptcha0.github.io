@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/base-layout.astro';
+import TagList from '../../components/tag-list.astro';
+
+export const getStaticPaths = (async () => {
+	const pages = await getCollection(
+		'blog',
+		({ data }) => data.published !== false
+	);
+
+	return pages.map((page) => ({
+		params: { post: page.id },
+		props: { post: page },
+	}));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props; // Get the post from the props
+
+const { title, description, date, tags, image } = post.data;
+const { Content, headings } = await render(post); // Render the post content to HTML
+---
+
+<BaseLayout title={title}>
+	<article class='prose'>
+		<TagList tags={tags} />
+		<div
+			style={image ? `background-image: url('${image}')` : ''}
+			class='mb-4 frosted-glass p-4'>
+			<!-- TODO: figure out how to make this look better -->
+			<h1 class='text-4xl font-bold mb-4'>
+				{title}
+			</h1>
+			<p class='text-lg mb-6'>{description}</p>
+			<span class='opacity-70 text-sm'>
+				&gtcir; {
+					date.toLocaleDateString(undefined, {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric',
+					})
+				}</span
+			>
+		</div>
+		<div class='*:mb-4'><Content /></div>
+	</article>
+</BaseLayout>

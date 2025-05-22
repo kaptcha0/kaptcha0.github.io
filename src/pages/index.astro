@@ -2,4 +2,25 @@
 import BaseLayout from '../layouts/base-layout.astro';
 ---
 
-<BaseLayout title='home'> hello </BaseLayout>
+<BaseLayout title='home'>
+	<section class='flex flex-col items-center justify-center h-full text-center'>
+		<h1 class='text-4xl font-bold mb-4'>Welcome</h1>
+		<p class='text-lg mb-6'>
+			Hi, I'm J'C Kabunga, also known as <span
+				class='clickable text-light-accent dark:text-dark-accent'>kaptcha_</span
+			>
+			<br />
+			<span>
+				I'm a passionate cybersecurity enthusiast and bug bounty hunter with
+				expertise in IT Administration, Capture the Flag competitions, and Web
+				Development. I love learning new technologies and sharing my knowledge
+				with others.
+			</span>
+		</p>
+		<a
+			href='/resume'
+			class='px-6 frosted-glass py-3 text-shadow-black dark:text-shadow-none hover:text-white rounded-lg shadow-md hover:bg-brand transition'>
+			View My Resume
+		</a>
+	</section>
+</BaseLayout>

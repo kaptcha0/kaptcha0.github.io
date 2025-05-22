@@ -1,6 +1,8 @@
 ---
 import Footer from '../components/footer.astro';
 import Navbar from '../components/navbar.astro';
+import Blobs from '../components/blobs.svelte';
+import { ClientRouter } from 'astro:transitions';
 
 import '../styles/global.css';
 
@@ -17,17 +19,19 @@ const { title } = Astro.props;
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='viewport' content='width=device-width' />
 		<meta name='generator' content={Astro.generator} />
+		<ClientRouter />
 		<title>{title}</title>
 	</head>
 	<body
-		data-theme='light'
-		class='bg-light-shade dark:bg-dark-shade text-black dark:text-white transition-colors h-full p-0 m-0 overflow-hidden'>
+		data-theme='dark'
+		class='text-black dark:text-white bg-light-shade dark:bg-dark-shade transition-all h-full p-0 m-0 overflow-hidden'>
 		<Navbar />
 		<main class='h-full ml-16 py-2 pr-4 relative z-0'>
-			<div class='frosted-glass h-full flex flex-col justify-between py-2 px-4'>
+			<div class='h-full flex flex-col justify-between py-2 px-4'>
 				<slot />
 				<Footer />
 			</div>
 		</main>
+		<Blobs client:only />
 	</body>
 </html>

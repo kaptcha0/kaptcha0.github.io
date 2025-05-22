@@ -1,0 +1,20 @@
+---
+import TagComponent from './tag.astro';
+
+interface Props {
+	tags: string[];
+	class?: string;
+}
+
+const { tags, class: classes } = Astro.props;
+---
+
+<ul class={'text-sm opacity-70 mb-4 list-none flex gap-2' + (classes || '')}>
+	{
+		tags.map((tag: string) => (
+			<li key={tag}>
+				<TagComponent tag={tag} href={`/blog/tag/${tag}`} />
+			</li>
+		))
+	}
+</ul>

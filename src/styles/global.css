@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
@@ -12,7 +15,9 @@
   --color-dark-accent: #E1A935;
   --color-black: #1e1e1e;
 
-  --font-sans: Helvetica, Arial, sans-serif;
+  --font-sans: "Manrope", Helvetica, Arial, sans-serif;
+  
+    --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
@@ -54,7 +59,7 @@
 
 @layer components {
   .clickable {
-    @apply transition-colors hover:text-light-accent dark:hover:text-dark-accent;
+    @apply transition-colors hover:text-light-accent dark:hover:text-dark-accent font-mono;
     position: relative;
     display: inline-block;
     text-decoration: none;

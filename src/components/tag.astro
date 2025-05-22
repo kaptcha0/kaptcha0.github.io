@@ -1,0 +1,19 @@
+---
+interface Props {
+	tag: string;
+	href?: string;
+}
+
+const { tag, href } = Astro.props;
+---
+
+{
+	href && (
+		<a
+			href={href}
+			class='no-underline transition-colors  hover:text-light-accent dark:hover:text-dark-accent'>
+			<span class='frosted-glass p-2 mx-2'>#{tag}</span>
+		</a>
+	)
+}
+{!href && <span class='frosted-glass p-2 mx-2'>#{tag}</span>}
