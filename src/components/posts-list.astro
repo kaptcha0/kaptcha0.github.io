@@ -20,10 +20,10 @@ const { posts } = Astro.props;
 							<img
 								src={post.data.image}
 								alt={post.data.title}
-								class='w-32 h-32 object-cover flex-shrink-0 rounded-md'
+								class='object-cover flex-shrink-0'
 							/>
 						) : (
-							<div class='w-32 h-32 flex-shrink-0 rounded-md bg-brand' />
+							<div class='w-32 h-32 flex-shrink-0 rounded-xl bg-brand' />
 						)}
 					</div>
 					<div class='ml-4'>

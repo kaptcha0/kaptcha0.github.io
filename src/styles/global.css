@@ -1,97 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-  --color-*: initial;
+	--color-*: initial;
 
-  --color-white: #efefefef;
-  --color-light-shade: #F4F5F4;
-  --color-light-accent: #9A5753;
-  --color-brand: #79A396;
-  --color-dark-shade: #1E1E2A;
-  --color-dark-accent: #E1A935;
-  --color-black: #1e1e1e;
+	--color-white: #efefefef;
+	--color-light-shade: #f4f5f4;
+	--color-light-accent: #9a5753;
+	--color-brand: #79a396;
+	--color-dark-shade: #1e1e2a;
+	--color-dark-accent: #e1a935;
+	--color-black: #1e1e1e;
 
-  --font-sans: "Manrope", Helvetica, Arial, sans-serif;
-  
-    --font-mono: "JetBrains Mono", monospace;
+	--font-sans: 'Manrope', Helvetica, Arial, sans-serif;
+	--font-mono: 'JetBrains Mono', monospace;
 }
 
 @layer base {
-  main>div {
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-brand) transparent;
+	main > div {
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-brand) transparent;
 
-    &::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
+		&::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
 
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--color-brand);
-      border-radius: 4px;
-    }
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--color-brand);
+			border-radius: 4px;
+		}
 
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
 
-    &::-webkit-scrollbar-button {
-      display: none;
-    }
+		&::-webkit-scrollbar-button {
+			display: none;
+		}
 
-    @variant dark {
-      scrollbar-color: var(--color-brand) transparent;
+		@variant dark {
+			scrollbar-color: var(--color-brand) transparent;
 
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--color-brand);
-      }
+			&::-webkit-scrollbar-thumb {
+				background-color: var(--color-brand);
+			}
 
-      &::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
-    }
-  }
+			&::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
+		}
+	}
+  
+	img {
+		@apply rounded-xl w-32 h-32;
+	}
+
+	h1, h2, h3, h4 {
+		@apply font-mono lowercase;
+	}
 }
 
 @layer components {
-  .clickable {
-    @apply transition-colors hover:text-light-accent dark:hover:text-dark-accent font-mono;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
+	.clickable {
+		@apply transition-colors hover:text-light-accent dark:hover:text-dark-accent font-mono;
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
 
-  .clickable::after {
-    @apply transition-all bg-light-accent dark:bg-dark-accent;
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-  }
+	.clickable::after {
+		@apply transition-all bg-light-accent dark:bg-dark-accent;
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 2px;
+	}
 
-  .clickable:hover::after {
-    width: 100%;
-  }
+	.clickable:hover::after {
+		width: 100%;
+	}
 
-  .frosted-glass {
-    @apply rounded-sm;
-    backdrop-filter: blur(10px);
-    background-color: rgba(127, 127, 127, 0.1);
-    border: 1px solid rgba(127, 127, 127, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	.frosted-glass {
+		@apply rounded-sm;
+		backdrop-filter: blur(10px);
+		background-color: rgba(127, 127, 127, 0.1);
+		border: 1px solid rgba(127, 127, 127, 0.2);
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    @variant dark {
-      background-color: rgba(200, 200, 200, 0.1);
-      border: 1px solid rgba(200, 200, 200, 0.2);
-    }
-  }
+		@variant dark {
+			background-color: rgba(200, 200, 200, 0.1);
+			border: 1px solid rgba(200, 200, 200, 0.2);
+		}
+	}
 }
