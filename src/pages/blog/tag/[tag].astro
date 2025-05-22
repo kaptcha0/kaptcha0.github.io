@@ -32,7 +32,9 @@ export const getStaticPaths = (async () => {
 const { posts } = Astro.props; // Get the post from the props
 ---
 
-<BaseLayout title={`Posts tagged with #${Astro.params.tag}`}>
+<BaseLayout
+	title={`Posts tagged with #${Astro.params.tag}`}
+	description={`Posts tagged with #${Astro.params.tag}`}>
 	<section class='prose'>
 		<h1 class='text-4xl font-bold mb-4'>
 			Posts tagged with #{Astro.params.tag}

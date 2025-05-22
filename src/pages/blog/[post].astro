@@ -18,11 +18,11 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props; // Get the post from the props
 
-const { title, description, date, tags, image } = post.data;
+const { title, description, date, tags, image, author } = post.data;
 const { Content, headings } = await render(post); // Render the post content to HTML
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description} keywords={tags} author={author}>
 	<article class='prose'>
 		<TagList tags={tags} />
 		<div
