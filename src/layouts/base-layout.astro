@@ -23,9 +23,9 @@ const { title, description, lang, author, keywords } = Astro.props;
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='viewport' content='width=device-width' />
 		<meta name='generator' content={Astro.generator} />
-		<link rel="manifest" href="site.webmanifest" />
+		<link rel='manifest' href='site.webmanifest' />
 		<ClientRouter />
-		<title>{title}</title>
+		<title>{title.toLocaleLowerCase()}</title>
 		<meta name='author' content={author || "J'C Kabunga (kaptcha_)"} />
 		{description && <meta name='description' content={description} />}
 		{keywords && <meta name='keywords' content={keywords.join(', ')} />}
