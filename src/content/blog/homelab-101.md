@@ -8,6 +8,8 @@ This got me thinking on what my original plans for this homelab were. I wanted a
 
 So welcome to my adventures in as I homelab the right way.
 
+---
+
 # planning
 
 I stumbled across a video by Mischa van den Burg where he outlined how his homelab is set up. You can go watch it here:
@@ -20,7 +22,7 @@ He pretty much outlined how he built his homelab in a way that's declarative and
 > 
 > as of right now, I have surface-level knowledge on what I'm going to be talking about. I did some very rudimentary planning (with the help of our dear friend, ChatGPT) and decided to use those tools based off of industry standards. Don't worry, though. I'll do a deep dive on things as they come up.
 
----
+
 
 ## infrastructure
 
