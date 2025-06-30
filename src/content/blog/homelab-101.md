@@ -14,7 +14,7 @@ So welcome to my adventures in as I homelab the right way.
 
 I stumbled across a video by Mischa van den Burg where he outlined how his homelab is set up. You can go watch it here:
 
-[The Kubernetes Homelab That Prints Job Offers - 2025](https://www.youtube.com/watch?v=WfDwFvl5XBo)
+![The Kubernetes Homelab That Prints Job Offers - 2025](https://www.youtube.com/watch?v=WfDwFvl5XBo)
 
 He pretty much outlined how he built his homelab in a way that's declarative and easy to document and modify. Taking heavy inspiration from this, I decided to build a similar homelab.
 
