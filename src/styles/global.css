@@ -62,6 +62,10 @@
 	h1, h2, h3, h4 {
 		@apply font-mono lowercase;
 	}
+
+	div:has(iframe) {
+		@apply flex items-center justify-center
+	}
 }
 
 @layer components {
