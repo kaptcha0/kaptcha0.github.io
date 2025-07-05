@@ -5,8 +5,9 @@ published: true
 date: 2025-07-05
 tags:
   - homelab
-  - homelabbing
-  - planning
+  - gitops
+  - kubernetes
+  - proxmox
 image: ''
 ---
 
