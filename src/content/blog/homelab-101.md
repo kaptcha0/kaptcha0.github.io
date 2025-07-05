@@ -5,8 +5,9 @@ published: true
 date: 2025-07-05
 tags:
   - homelab
-  - homelabbing
-  - planning
+  - gitops
+  - kubernetes
+  - proxmox
 image: ''
 ---
 
@@ -19,8 +20,6 @@ If I'm honest, my homelab wasn't much before. It consisted of an old Dell laptop
 This got me thinking on what my original plans for this homelab were. I wanted a sort of private infrastructure that I could learn and test things out on. So I decided to scrap everything and start from scratch. This time, I promised to take the time to research and plan everything out thoroughly.
 
 So welcome to my adventures in as I homelab the right way.
-
----
 
 # planning
 
@@ -150,8 +149,6 @@ Here’s the core stack that powers everything:
 
 Control nodes will run **Ubuntu or Debian**, but all the worker nodes will use **Alpine** to keep things lightweight.
 
----
-
 # gitops
 
 One of the biggest goals with this homelab is to make everything GitOps-based.
@@ -174,7 +171,6 @@ For secrets, I’m planning to use **SOPS** with **AGE** for encryption. That wa
 
 Eventually, I want this to be so well-automated that I can wipe my Proxmox host and rebuild the entire cluster from a clean slate just by cloning a repo and letting everything run.
 
----
 
 That’s it for now. I’ll post updates as I go — probably starting with the Terraform and Ansible setup for provisioning VMs. If you’ve got suggestions, feel free to drop them my way. This is a work in progress, but I’m excited to finally be doing it right.
 
