@@ -63,7 +63,7 @@
 		@apply font-mono lowercase;
 	}
 
-	div:has(iframe) {
+	div:has(> iframe) {
 		@apply flex items-center justify-center
 	}
 }
