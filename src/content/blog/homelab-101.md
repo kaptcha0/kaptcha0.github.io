@@ -1,7 +1,7 @@
 ---
 title: "homelab the right way 101: planning"
 description: I'm rebuilding my homelab from scratch with a focus on automation, security, and scalability. Using tools like Proxmox, Terraform, Ansible, and k3s, I’m creating a fully GitOps-managed setup inspired by Mischa van den Burg. In this post, I cover my infrastructure plan, network segmentation, and essential services like Plex, Home Assistant, and DVWA. Perfect for anyone into homelabs, DevOps, or cybersecurity.
-published: true
+published: false
 date: 2025-07-05
 tags:
   - homelab
