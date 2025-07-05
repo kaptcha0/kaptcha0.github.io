@@ -63,8 +63,32 @@
 		@apply font-mono lowercase;
 	}
 
+	h1 {
+		@apply text-lg font-bold
+	}
+
+	h2 {
+		@apply underline font-semibold
+	}
+
+	h3 {
+		@apply underline italic font-medium
+	}
+
+	h4 {
+		@apply italic font-normal
+	}
+
 	div:has(> iframe) {
 		@apply flex items-center justify-center
+	}
+
+	ul {
+		@apply list-disc
+	}
+
+	ol {
+		@apply list-decimal
 	}
 }
 
