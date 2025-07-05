@@ -14,7 +14,9 @@ So welcome to my adventures in as I homelab the right way.
 
 I stumbled across a video by Mischa van den Burg where he outlined how his homelab is set up. You can go watch it [here](https://youtu.be/WfDwFvl5XBo?si=pckxMDQSORhG6lAp):
 
+<div>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WfDwFvl5XBo?si=oYQKlgfu43VWi6OC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 He pretty much outlined how he built his homelab in a way that's declarative and easy to document and modify. Taking heavy inspiration from this, I decided to build a similar homelab.
 
