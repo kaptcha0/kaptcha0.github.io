@@ -36,7 +36,9 @@ const { title, description, lang, author, keywords } = Astro.props;
 		<Navbar />
 		<main class='h-full ml-16 py-2 pr-4 relative z-0'>
 			<div class='h-full flex flex-col justify-between py-2 px-4'>
-				<slot />
+				<div class="overflow-scroll">
+					<slot />
+				</div>
 				<Footer />
 			</div>
 		</main>
