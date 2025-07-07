@@ -1,50 +1,38 @@
- ---
- import type { CollectionEntry } from 'astro:content';
- 
- interface Props {
- 	posts: CollectionEntry<'blog'>[];
- }
- 
- const { posts } = Astro.props;
- ---
- 
-<ul class='space-y-4 list-none'>
- 	{
- 		posts.map((post) => (
- 			<li
- 				key={post.id}
- 				class='flex items-center space-x-4 p-4 frosted-glass transform transition-transform duration-150 hover:scale-y-110 group'>
- 				<a href={`/blog/${post.id}`} class='flex items-center w-full'>
- 					<div>
- 						{post.data.image ? (
- 							<img
- 								src={post.data.image}
- 								alt={post.data.title}
- 								class='object-cover flex-shrink-0'
- 							/>
- 						) : (
- 							<div class='w-32 h-32 flex-shrink-0 rounded-xl bg-brand' />
- 						)}
- 					</div>
- 					<div class='ml-4'>
- 						<span class='text-sm opacity-70'>
- 							{post.data.tags.map((tag) => `#${tag}`).join(', ')}
- 						</span>
- 						<h2 class='text-xl font-semibold mb-2 transition-colors group-hover:text-light-accent dark:group-hover:text-dark-accent'>
- 							{post.data.title}
- 						</h2>
- 						<p>{post.data.description}</p>
- 						<span class='text-sm opacity-70'>
- 							{new Date(post.data.date).toLocaleDateString()} &bull;{' '}
- 							{Math.floor(
- 								(new Date() - new Date(post.data.date)) / (1000 * 60 * 60 * 24)
- 							)}{' '}
- 							days ago
- 						</span>
- 					</div>
- 				</a>
- 			</li>
- 		))
- 	}
- </ul>
+---
+import type { CollectionEntry } from 'astro:content';
 
+interface Props {
+	posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class='space-y-4 list-none'>
+	{
+		posts.map((post) => (
+			<li
+				key={post.id}
+				class='flex items-center space-x-4 p-4 frosted-glass transform transition-transform duration-150 group'>
+				<a href={`/blog/${post.id}`} class='flex items-center w-full'>
+					<div class='ml-4'>
+						<span class='text-sm opacity-70'>
+							{post.data.tags.map((tag) => `#${tag}`).join(', ')}
+						</span>
+						<h2 class='text-xl font-semibold transition-colors group-hover:text-light-accent dark:group-hover:text-dark-accent'>
+							{post.data.title}
+						</h2>
+						<p>{post.data.description}</p>
+						<span class='text-sm opacity-70'>
+							{new Date(post.data.date).toLocaleDateString()} &bull;{' '}
+							{Math.floor(
+								(new Date() - new Date(post.data.date)) / (1000 * 60 * 60 * 24)
+							)}{' '}
+							days ago
+						</span>
+					</div>
+				</a>
+			</li>
+		))
+	}
+</ul>

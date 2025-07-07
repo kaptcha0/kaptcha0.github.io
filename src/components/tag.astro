@@ -2,9 +2,10 @@
 interface Props {
 	tag: string;
 	href?: string;
+	class?: string;
 }
 
-const { tag, href } = Astro.props;
+const { tag, href, class: classes } = Astro.props;
 ---
 
 {
@@ -12,8 +13,12 @@ const { tag, href } = Astro.props;
 		<a
 			href={href}
 			class='no-underline transition-colors  hover:text-light-accent dark:hover:text-dark-accent'>
-			<span class='frosted-glass p-2 mx-2'>#{tag}</span>
+			<span class={['frosted-glass p-2 mx-2', classes].join(' ')}>#{tag}</span>
 		</a>
 	)
 }
-{!href && <span class='frosted-glass p-2 mx-2'>#{tag}</span>}
+{
+	!href && (
+		<span class={['frosted-glass p-2 mx-2', classes].join(' ')}>#{tag}</span>
+	)
+}

@@ -16,7 +16,8 @@ const menuItems = [
 ];
 ---
 
-<div class='fixed z-10 top-0 left-0 h-full flex flex-col justify-between'>
+<div
+	class='fixed z-10 top-0 left-0 w-full sm:w-auto sm:h-full flex sm:flex-col justify-between'>
 	<div
 		class='m-2 p-2 max-w-8 h-8 frosted-glass flex justify-center items-center'>
 		<a
@@ -26,17 +27,20 @@ const menuItems = [
 			<Icon name='lucide:home' />
 		</a>
 	</div>
-	<nav class='flex flex-col justify-center items-start frosted-glass m-2 p-2'>
+	<nav
+		class='flex sm:flex-col justify-center items-start frosted-glass m-2 p-2'>
 		<ul
-			class='list-none w-4 overflow-x-hidden overflow-y-visible hover:w-24 flex flex-col justify-center items-start space-y-4 transition-all'>
+			class='list-none h-4 sm:h-auto sm:w-4 overflow-x-visible sm:overflow-x-hidden overflow-y-hidden sm:overflow-y-visible sm:hover:w-24 flex sm:flex-col justify-center items-start space-x-8 sm:space-x-0 sm:space-y-4 transition-all'>
 			{
 				menuItems.map((mi) => (
 					<li class='clickable'>
 						<a
 							href={mi.href}
-							class='flex items-center place-self-end space-x-2'>
+							class='flex flex-col sm:flex-row items-center place-self-end sm:space-x-2'>
 							<Icon name={mi.icon} />
-							<span class='transition-all lowercase font-mono'>{mi.name}</span>
+							<span class='transition-all hidden sm:block lowercase font-mono'>
+								{mi.name}
+							</span>
 						</a>
 					</li>
 				))

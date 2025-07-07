@@ -22,7 +22,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date - a.data.date);
 			Welcome to my blog! Here, I share my thoughts, experiences, and insights
 			on cybersecurity, web development, and more.
 		</p>
-		<TagList class='justify-center' tags={uniqueTags} />
+		<TagList tags={uniqueTags} />
 		<PostsList posts={sortedPosts} />
 		<p class='text-sm text-center opacity-70 mt-4'>
 			Stay tuned for more updates and articles coming soon!

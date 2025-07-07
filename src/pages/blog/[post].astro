@@ -19,7 +19,7 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props; // Get the post from the props
 
-const { title, subtitle, description, date, tags, image, author } = post.data;
+const { title, subtitle, description, date, tags, author } = post.data;
 const { Content } = await render(post); // Render the post content to HTML
 ---
 
@@ -29,10 +29,7 @@ const { Content } = await render(post); // Render the post content to HTML
 	keywords={tags}
 	author={author}>
 	<TagList tags={tags} />
-	<div
-		style={image ? `background-image: url('${image}')` : ''}
-		class='mb-4 frosted-glass p-4'>
-		<!-- TODO: figure out how to make this ^^ look better -->
+	<div class='mb-4 frosted-glass p-4'>
 		<h1 class='text-4xl font-bold mb-4'>
 			{title}
 		</h1>
@@ -47,7 +44,7 @@ const { Content } = await render(post); // Render the post content to HTML
 			}</span
 		>
 	</div>
-	<div class="flex flex-col items-center">
+	<div class='sm:flex sm:flex-col sm:items-center'>
 		<Prose>
 			<Content />
 		</Prose>

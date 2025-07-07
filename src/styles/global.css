@@ -61,7 +61,11 @@
 	}
 
 	div:has(> iframe) {
-		@apply flex items-center justify-center;
+		@apply flex items-center justify-center overflow-hidden rounded-xl aspect-video;
+	}
+
+	div > iframe {
+		@apply w-full h-full;
 	}
 
 	ul {
@@ -75,30 +79,36 @@
 	blockquote {
 		@apply p-4 my-4 border-s-4 border-brand bg-light-shade/80 dark:bg-dark-shade/80;
 	}
+
+	.prose pre > code {
+		@apply border-none
+	}
 }
 
 @layer components {
-	.clickable{
-		@apply transition-colors hover:text-light-accent dark:hover:text-dark-accent font-mono;
-		position: relative;
-		display: inline-block;
-		text-decoration: none;
-		color: inherit;
-		cursor: pointer;
+	.clickable,
+	.prose a {
+		@apply !transition-colors hover:!text-light-accent dark:hover:!text-dark-accent font-mono;
+		position: relative !important;
+		display: inline-block !important;
+		text-decoration: none !important;
+		color: inherit !important;
+		cursor: pointer !important;
 	}
 
-	.clickable::after {
-		@apply transition-all bg-light-accent dark:bg-dark-accent;
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 0;
-		height: 2px;
+	.clickable::after,
+	.prose a::after {
+		@apply !transition-all !bg-light-accent dark:!bg-dark-accent;
+		content: '' !important;
+		position: absolute !important;
+		left: 0 !important;
+		bottom: 0 !important;
+		width: 0 !important;
+		height: 2px !important;
 	}
 
-	.clickable:hover::after {
-		width: 100%;
+	.clickable:hover::after, .prose a:hover::after {
+		width: 100% !important;
 	}
 
 	.frosted-glass {

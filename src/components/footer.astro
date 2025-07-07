@@ -1,40 +1,39 @@
- ---
- import { Icon } from 'astro-icon/components';
- 
- const icons = [
- 	{
- 		name: 'Github',
- 		icon: 'lucide:github',
- 		href: 'https://github.com/kaptcha0',
- 	},
- 	{
- 		name: 'LinkedIn',
- 		icon: 'lucide:linkedin',
- 		href: 'https://linkedin.com/in/jc-kabunga',
- 	},
- ];
- ---
- 
- <footer
- 	class='mt-auto opacity-50 text-sm w-full flex space-x-4 justify-center items-center'>
- 	<p class='text-center'>
- 		&copy; {new Date().getFullYear()} kaptcha_. All rights reserved.
- 	</p>
-	<ul class='flex items-center justify-center space-x-4 list-none'>
- 		{
- 			icons.map((icon) => (
- 				<li>
- 					<a
- 						href={icon.href}
- 						target='_blank'
- 						rel='noopener noreferrer'
- 						aria-label={icon.name}
- 						class='hover:text-light-accent dark:hover:text-dark-accent transition-colors'>
- 						<Icon name={icon.icon} />
- 					</a>
- 				</li>
- 			))
- 		}
- 	</ul>
- </footer>
+---
+import { Icon } from 'astro-icon/components';
 
+const icons = [
+	{
+		name: 'Github',
+		icon: 'lucide:github',
+		href: 'https://github.com/kaptcha0',
+	},
+	{
+		name: 'LinkedIn',
+		icon: 'lucide:linkedin',
+		href: 'https://linkedin.com/in/jc-kabunga',
+	},
+];
+---
+
+<footer
+	class='mt-auto opacity-50 text-sm w-full flex space-x-4 justify-center items-center'>
+	<p class='text-center'>
+		&copy; {new Date().getFullYear()} kaptcha_. All rights reserved.
+	</p>
+	<ul class='flex items-center justify-center space-x-4 list-none'>
+		{
+			icons.map((icon) => (
+				<li>
+					<a
+						href={icon.href}
+						target='_blank'
+						rel='noopener noreferrer'
+						aria-label={icon.name}
+						class='hover:text-light-accent dark:hover:text-dark-accent transition-colors'>
+						<Icon name={icon.icon} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</footer>

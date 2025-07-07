@@ -9,11 +9,15 @@ interface Props {
 const { tags, class: classes } = Astro.props;
 ---
 
-<ul class={'text-sm opacity-70 mb-4 list-none flex items-center gap-2' + (classes || '')}>
+<ul
+	class={[
+		'text-sm opacity-70 mb-4 list-none w-full flex flex-nowrap whitespace-nowrap min-w-0 items-center sm:gap-2 overflow-x-auto',
+		classes,
+	].join(' ')}>
 	{
 		tags.map((tag: string) => (
 			<li key={tag}>
-				<TagComponent tag={tag} href={`/blog/tag/${tag}`} />
+				<TagComponent class='block' tag={tag} href={`/blog/tag/${tag}`} />
 			</li>
 		))
 	}

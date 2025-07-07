@@ -35,18 +35,13 @@ const { posts } = Astro.props; // Get the post from the props
 <BaseLayout
 	title={`#${Astro.params.tag}`}
 	description={`Posts tagged with #${Astro.params.tag}`}>
-	<section class='prose'>
+	<section>
 		<h1 class='text-4xl font-bold mb-4'>
 			Posts tagged with #{Astro.params.tag}
 		</h1>
-		<p class='text-lg mb-6'>
-			Here are all the posts tagged with <TagComponent
-				tag={Astro.params.tag}
-			/>.
-		</p>
-		<PostsList posts={posts} />
-		<p class='text-sm text-center opacity-70 mt-4'>
-			Stay tuned for more updates and articles coming soon!
-		</p>
-	</section></BaseLayout
->
+	</section>
+	<PostsList posts={posts} />
+	<p class='text-sm text-center opacity-70 mt-4'>
+		Stay tuned for more updates and articles coming soon!
+	</p>
+</BaseLayout>

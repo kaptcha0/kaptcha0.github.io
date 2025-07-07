@@ -34,7 +34,8 @@ const { title, description, lang, author, keywords } = Astro.props;
 		data-theme='dark'
 		class='text-black dark:text-white bg-light-shade dark:bg-dark-shade transition-all h-full p-0 m-0 overflow-hidden font-mono'>
 		<Navbar />
-		<main class='h-full ml-16 p-4 pr-4 relative z-0 overflow-auto flex flex-col justify-between bg-light-shade/60 dark:bg-dark-shade/60 shadow-sm shadow-light-shade dark:shadow-dark-shade'>
+		<main
+			class='h-full pt-16 sm:pt-0 sm:ml-16 p-4 pr-4 relative z-0 overflow-y-auto flex flex-col justify-between'>
 			<slot />
 			<Footer />
 		</main>

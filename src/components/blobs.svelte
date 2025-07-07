@@ -79,11 +79,11 @@
 </script>
 
 <div
-	class="bg-light-shade dark:bg-dark-shade transition-colors fixed inset-0 -z-10 overflow-hidden pointer-events-none"
+	class="bg-light-shade dark:bg-dark-shade opacity-20 transition-colors fixed inset-0 -z-10 overflow-hidden pointer-events-none"
 >
 	{#each blobs as blob, i}
 		<svg
-			class="absolute animate-[move-blobs-infinite] will-change-transform transition-all text-black dark:text-brand opacity-50 blur-md"
+			class="absolute animate-[move-blobs-infinite] will-change-transform transition-all text-black dark:text-brand blur-md"
 			width={blob.size}
 			height={blob.size}
 			viewBox="0 0 200 200"

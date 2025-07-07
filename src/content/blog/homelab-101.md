@@ -1,7 +1,7 @@
 ---
 title: "homelab the right way 101: planning"
 subtitle: ''
-description: I'm rebuilding my homelab from scratch with a focus on automation, security, and scalability. Using tools like Proxmox, Terraform, Ansible, and k3s, I’m creating a fully GitOps-managed setup inspired by Mischa van den Burg. In this post, I cover my infrastructure plan, network segmentation, and essential services like Plex, Home Assistant, and DVWA. Perfect for anyone into homelabs, DevOps, or cybersecurity.
+description: I'm rebuilding my homelab from scratch with a focus on automation, security, and scalability. Using tools like Proxmox, Terraform, Ansible, and k3s, I’m creating a fully GitOps-managed setup. In this post, I cover my infrastructure plan, network segmentation, and essential services like Plex, Home Assistant, and DVWA.
 published: true
 date: 2025-07-05
 tags:
@@ -9,7 +9,6 @@ tags:
   - gitops
   - kubernetes
   - proxmox
-image: ''
 ---
 
 ## introduction
@@ -27,7 +26,7 @@ So welcome to my adventures in as I homelab the right way.
 I stumbled across a video by Mischa van den Burg where he outlined how his homelab is set up. You can go watch it [here](https://youtu.be/WfDwFvl5XBo?si=pckxMDQSORhG6lAp):
 
 <div>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WfDwFvl5XBo?si=oYQKlgfu43VWi6OC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/WfDwFvl5XBo?si=oYQKlgfu43VWi6OC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 He pretty much outlined how he built his homelab in a way that's declarative and easy to document and modify. Taking heavy inspiration from this, I decided to build a similar homelab.
