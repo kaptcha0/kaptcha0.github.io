@@ -19,7 +19,7 @@ If I'm honest, my homelab wasn't much before. It consisted of an old Dell laptop
 
 This got me thinking on what my original plans for this homelab were. I wanted a sort of private infrastructure that I could learn and test things out on. So I decided to scrap everything and start from scratch. This time, I promised to take the time to research and plan everything out thoroughly.
 
-So welcome to my adventures in as I homelab the right way.
+So welcome to my adventures as I homelab the right way.
 
 ## planning
 
