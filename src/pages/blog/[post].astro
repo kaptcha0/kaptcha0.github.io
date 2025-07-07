@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/base-layout.astro';
 import TagList from '../../components/tag-list.astro';
+import Prose from '../../components/prose.astro';
 
 export const getStaticPaths = (async () => {
 	const pages = await getCollection(
@@ -18,31 +19,37 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props; // Get the post from the props
 
-const { title, description, date, tags, image, author } = post.data;
-const { Content, headings } = await render(post); // Render the post content to HTML
+const { title, subtitle, description, date, tags, image, author } = post.data;
+const { Content } = await render(post); // Render the post content to HTML
 ---
 
-<BaseLayout title={title} description={description} keywords={tags} author={author}>
-	<article class='prose'>
-		<TagList tags={tags} />
-		<div
-			style={image ? `background-image: url('${image}')` : ''}
-			class='mb-4 frosted-glass p-4'>
-			<!-- TODO: figure out how to make this look better -->
-			<h1 class='text-4xl font-bold mb-4'>
-				{title}
-			</h1>
-			<p class='text-lg mb-6'>{description}</p>
-			<span class='opacity-70 text-sm'>
-				&gtcir; {
-					date.toLocaleDateString(undefined, {
-						year: 'numeric',
-						month: 'long',
-						day: 'numeric',
-					})
-				}</span
-			>
-		</div>
-		<div class='*:mb-4'><Content /></div>
-	</article>
+<BaseLayout
+	title={title}
+	description={description}
+	keywords={tags}
+	author={author}>
+	<TagList tags={tags} />
+	<div
+		style={image ? `background-image: url('${image}')` : ''}
+		class='mb-4 frosted-glass p-4'>
+		<!-- TODO: figure out how to make this ^^ look better -->
+		<h1 class='text-4xl font-bold mb-4'>
+			{title}
+		</h1>
+		{subtitle && <h2 class='text-lg mb-6'>{subtitle}</h2>}
+		<span class='opacity-70 text-sm'>
+			&gtcir; {
+				date.toLocaleDateString(undefined, {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				})
+			}</span
+		>
+	</div>
+	<div class="flex flex-col items-center">
+		<Prose>
+			<Content />
+		</Prose>
+	</div>
 </BaseLayout>

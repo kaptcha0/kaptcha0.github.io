@@ -9,7 +9,7 @@ interface Props {
 const { tags, class: classes } = Astro.props;
 ---
 
-<ul class={'text-sm opacity-70 mb-4 list-none flex gap-2' + (classes || '')}>
+<ul class={'text-sm opacity-70 mb-4 list-none flex items-center gap-2' + (classes || '')}>
 	{
 		tags.map((tag: string) => (
 			<li key={tag}>

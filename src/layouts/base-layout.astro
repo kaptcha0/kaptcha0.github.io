@@ -1,48 +1,43 @@
- ---
- import Footer from '../components/footer.astro';
- import Navbar from '../components/navbar.astro';
- import Blobs from '../components/blobs.svelte';
- import { ClientRouter } from 'astro:transitions';
- 
- import '../styles/global.css';
- 
- interface Props {
- 	title: string;
- 	description?: string;
- 	lang?: string;
- 	author?: string;
- 	keywords?: string[];
- }
- 
- const { title, description, lang, author, keywords } = Astro.props;
- ---
- 
- <html class='p-0 m-0 max-h-screen h-screen overflow-hidden' lang={lang || 'en'}>
- 	<head>
- 		<meta charset='utf-8' />
- 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
- 		<meta name='viewport' content='width=device-width' />
- 		<meta name='generator' content={Astro.generator} />
- 		<link rel='manifest' href='site.webmanifest' />
- 		<ClientRouter />
- 		<title>{title.toLocaleLowerCase()}</title>
- 		<meta name='author' content={author || "J'C Kabunga (kaptcha_)"} />
- 		{description && <meta name='description' content={description} />}
- 		{keywords && <meta name='keywords' content={keywords.join(', ')} />}
- 	</head>
- 	<body
- 		data-theme='dark'
- 		class='text-black dark:text-white bg-light-shade dark:bg-dark-shade transition-all h-full p-0 m-0 overflow-hidden'>
- 		<Navbar />
- 		<main class='h-full ml-16 py-2 pr-4 relative z-0'>
- 			<div class='h-full flex flex-col justify-between py-2 px-4'>
-				<div class="overflow-auto">
-					<slot />
-				</div>
- 				<Footer />
- 			</div>
- 		</main>
- 		<Blobs client:only />
- 	</body>
- </html>
+---
+import Footer from '../components/footer.astro';
+import Navbar from '../components/navbar.astro';
+import Blobs from '../components/blobs.svelte';
+import { ClientRouter } from 'astro:transitions';
 
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	lang?: string;
+	author?: string;
+	keywords?: string[];
+}
+
+const { title, description, lang, author, keywords } = Astro.props;
+---
+
+<html class='p-0 m-0 max-h-screen h-screen overflow-hidden' lang={lang || 'en'}>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<link rel='manifest' href='site.webmanifest' />
+		<ClientRouter />
+		<title>{title.toLocaleLowerCase()}</title>
+		<meta name='author' content={author || "J'C Kabunga (kaptcha_)"} />
+		{description && <meta name='description' content={description} />}
+		{keywords && <meta name='keywords' content={keywords.join(', ')} />}
+	</head>
+	<body
+		data-theme='dark'
+		class='text-black dark:text-white bg-light-shade dark:bg-dark-shade transition-all h-full p-0 m-0 overflow-hidden font-mono'>
+		<Navbar />
+		<main class='h-full ml-16 p-4 pr-4 relative z-0 overflow-auto flex flex-col justify-between bg-light-shade/60 dark:bg-dark-shade/60 shadow-sm shadow-light-shade dark:shadow-dark-shade'>
+			<slot />
+			<Footer />
+		</main>
+		<Blobs client:only />
+	</body>
+</html>

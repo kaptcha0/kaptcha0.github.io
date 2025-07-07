@@ -1,7 +1,8 @@
 ---
 title: "homelab the right way 101: planning"
+subtitle: ''
 description: I'm rebuilding my homelab from scratch with a focus on automation, security, and scalability. Using tools like Proxmox, Terraform, Ansible, and k3s, I’m creating a fully GitOps-managed setup inspired by Mischa van den Burg. In this post, I cover my infrastructure plan, network segmentation, and essential services like Plex, Home Assistant, and DVWA. Perfect for anyone into homelabs, DevOps, or cybersecurity.
-published: false
+published: true
 date: 2025-07-05
 tags:
   - homelab
@@ -11,7 +12,7 @@ tags:
 image: ''
 ---
 
-# introduction
+## introduction
 
 Hello all, thanks for checking out my blog again! Over the past couple days, I've been tackling a new project. Well, if I'm going to be honest, I've been revisiting a project that I had started working on last year. My homelab.
 
@@ -21,23 +22,21 @@ This got me thinking on what my original plans for this homelab were. I wanted a
 
 So welcome to my adventures in as I homelab the right way.
 
-# planning
+## planning
 
 I stumbled across a video by Mischa van den Burg where he outlined how his homelab is set up. You can go watch it [here](https://youtu.be/WfDwFvl5XBo?si=pckxMDQSORhG6lAp):
 
 <div>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WfDwFvl5XBo?si=oYQKlgfu43VWi6OC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WfDwFvl5XBo?si=oYQKlgfu43VWi6OC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 He pretty much outlined how he built his homelab in a way that's declarative and easy to document and modify. Taking heavy inspiration from this, I decided to build a similar homelab.
 
-> 💡 Keep in mind
-> 
-> as of right now, I have surface-level knowledge on what I'm going to be talking about. I did some very rudimentary planning (with the help of our dear friend, ChatGPT) and decided to use those tools based off of industry standards. Don't worry, though. I'll do a deep dive on things as they come up.
+> Keep in mind, as of right now, I have surface-level knowledge on what I'm going to be talking about. I did some very rudimentary planning (with the help of our dear friend, ChatGPT) and decided to use those tools based off of industry standards. Don't worry, though. I'll do a deep dive on things as they come up.
 
 
 
-## infrastructure
+### infrastructure
 
 I decided manage the infrastructure and everything using Terraform, Ansible, and Kubernetes:
 
@@ -55,11 +54,11 @@ I also decided that I want everything to be GitOps based. To my understanding, t
 
 Now, I may be missing some things, so I'll definitely look into how to implement that properly.
 
-## monitoring
+### monitoring
 
 Taking inspiration from Mischa, again. I wanted to use the Grafana suite to monitor all my services. I decided on using Loki, Prometheus, and Grafana Alerting to keep tabs on everything, including maybe even devices outside of my homelab (no idea if this will even work, but we'll see).
 
-## security
+### security
 
 As an aspiring Cybersecurity Analyst, I want this homelab to be secure by design. That means more than just installing a firewall and calling it a day. I’m planning to implement multiple layers of protection.
 
@@ -81,11 +80,11 @@ This way, even if something gets compromised, the blast radius stays small.
 
 I also want to run an **IDS/IPS** to keep an eye on things. The idea is to monitor for suspicious traffic and get alerts when something looks off. Ideally, I’ll have alerting hooked into email or even mobile notifications so I can react fast. It might be a bit much for now, but the goal of this project is to learn
 
-## services
+### services
 
 Here’s a breakdown of what I plan to run in the homelab, grouped by purpose.
 
-### admin
+#### admin
 
 These are the services that will keep the homelab running smoothly and let me see what’s going on under the hood.
 
@@ -97,7 +96,7 @@ These are the services that will keep the homelab running smoothly and let me se
 
 - **Syslog server** – will collect logs from VMs, Kubernetes pods, and (hopefully) even external devices like routers or smart devices on my home network
 
-### homenet
+#### homenet
 
 These are more for day-to-day quality of life:
 
@@ -113,7 +112,7 @@ These are more for day-to-day quality of life:
 
     - Backed by **TrueNAS** for storage
 
-### cyber
+#### cyber
 
 This segment is dedicated to learning and testing cybersecurity tools and concepts.
 
@@ -123,11 +122,11 @@ This segment is dedicated to learning and testing cybersecurity tools and concep
 
 - I’ll isolate this segment pretty tightly so that if I break something, it doesn’t take out the rest of the network
 
-### development
+#### development
 
 This is kind of the wildcard segment. Whatever I’m currently working on — maybe a web app, maybe an API, maybe some tool I’m building — it’ll live here. I’ll spin up whatever I need as it comes up.
 
-### infrastructure
+#### infrastructure
 
 Here’s the core stack that powers everything:
 
@@ -149,7 +148,7 @@ Here’s the core stack that powers everything:
 
 Control nodes will run **Ubuntu or Debian**, but all the worker nodes will use **Alpine** to keep things lightweight.
 
-# gitops
+## gitops
 
 One of the biggest goals with this homelab is to make everything GitOps-based.
 
