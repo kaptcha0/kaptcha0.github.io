@@ -49,7 +49,7 @@ After finally setting up the provider, and making sure that I could create VMs o
 
 #### bootstrapping with cloud-init
 
-From my understanding, cloud-init is a tool that allows you to bootstrap a VM on it's first boot. Following [Matt Edward's blog post](https://mattedwards.org/2024/07/using-cloud-init-with-proxmox-vms) I used it to:
+From my understanding, cloud-init is a tool that allows you to bootstrap a VM on it's first boot. Following [Matt Edward's blog post](https://mattedwards.org/2024/07/using-cloud-init-with-proxmox-vms), I used cloud-init to:
 
 - attach memory and storage to the image
 - create a network adapter and attach it to the image
