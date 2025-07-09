@@ -57,7 +57,7 @@
 	}
 
 	img {
-		@apply rounded-xl w-32 h-32;
+		@apply rounded-xl;
 	}
 
 	div:has(> iframe) {
