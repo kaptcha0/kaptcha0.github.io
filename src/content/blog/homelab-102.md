@@ -17,7 +17,7 @@ Terraform was a beast to set up. Like, really. I think I spent about 4 days just
 
 Strap in, 'cuz this will be a long one. I guess it's all part of the journey to homelab the right way.
 
-> Psst. Interested in following along? Check out my repo: [kaptcha0/homelab](https://github.com/kaptcha0/homelab)
+> Psst. Interested in following along? Check out my repo: [kaptcha0/homelab](https://github.com/kaptcha0/homelab/tree/2fa15db9a23ad5366873859cd9b45b1f6c593c6b/)
 
 ## terraform + proxmox, the bane of my existence
 
@@ -65,7 +65,7 @@ After creating my template, I ended up having a debian template with an ID of 10
 
 #### terraform configuration
 
-After successfully setting up my template, I proceeded to finally provision my Kubernetes cluster. If you want to see my entire Terraform config, check it out [here](https://github.com/kaptcha0/homelab/tree/6bcb2a3870d26fa391b4920b1f08da15553c33c2/terraform). But I'll just be going over my methodology in provisioning my VMs.
+After successfully setting up my template, I proceeded to finally provision my Kubernetes cluster. If you want to see my entire Terraform config, check it out [here](https://github.com/kaptcha0/homelab/tree/2fa15db9a23ad5366873859cd9b45b1f6c593c6b/terraform). But I'll just be going over my methodology in provisioning my VMs.
 
 From the get-go, I realized that my Proxmox node could only probably handle 3 extra VMs. Keep in mind, I already have a Truenas instance which has the ability to use up all of my system resources (I'll be moving this to it's own machine as soon as I can, don't worry). As such, I decided that a 3 node cluster, with 1 control node and 2 agent nodes.
 
@@ -179,7 +179,7 @@ k3s-agent-1    Ready    <none>                 106m   v1.32.6+k3s1
 k3s-server-0   Ready    control-plane,master   107m   v1.32.6+k3s1
 ```
 
-What's next? I think I'll look at installing Flux finish up making this a GitOps Kubernetes homelab. Hopefully that post won't be as long :sigh:.
+What's next? I think I'll look at installing Flux finish up making this a GitOps Kubernetes homelab. Hopefully that post won't be as long.
 
 See you then!
 
