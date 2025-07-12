@@ -23,12 +23,7 @@ const { posts } = Astro.props;
 							{post.data.title}
 						</h2>
 						<p>{post.data.description}</p>
-						<span class='text-sm opacity-70'>
-							{new Date(post.data.date).toLocaleDateString()} &bull;{' '}
-							{Math.floor(
-								(new Date() - new Date(post.data.date)) / (1000 * 60 * 60 * 24)
-							)}{' '}
-							days ago
+						<span data-date={post.data.date.toISOString()} class='text-sm opacity-70'>
 						</span>
 					</div>
 				</a>
@@ -36,3 +31,36 @@ const { posts } = Astro.props;
 		))
 	}
 </ul>
+
+<script>
+	function formatDateDifference(date: Date): string {
+	  const now = new Date();
+	  const diffMs = now.getTime() - date.getTime();
+	  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+	  if (diffDays < 7) {
+	    return `${diffDays} day${diffDays !== 1 ? 's' : ''} ago`;
+	  }
+
+	  const diffWeeks = Math.floor(diffDays / 7);
+	  if (diffWeeks < 4) {
+	    return `${diffWeeks} week${diffWeeks !== 1 ? 's' : ''} ago`;
+	  }
+
+	  const diffMonths = Math.floor(diffDays / 30.44); // average month length
+
+	  if (diffMonths < 12) {
+	    return `${diffMonths} month${diffMonths !== 1 ? 's' : ''} ago`;
+	  }
+
+	  const diffYears = Math.floor(diffDays / 365.25); // average year length
+	  return `${diffYears} year${diffYears !== 1 ? 's' : ''} ago`;
+	}
+
+	const dateSpans = document.querySelectorAll('span[data-date]')
+
+	dateSpans.forEach(dateSpan => {
+		const date = new Date(dateSpan.dataset.date)
+		dateSpan.textContent = date.toLocaleDateString() + ' • ' + formatDateDifference(date)
+	})
+</script>

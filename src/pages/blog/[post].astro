@@ -24,7 +24,7 @@ const { Content } = await render(post); // Render the post content to HTML
 ---
 
 <BaseLayout
-	title={title}
+	title={[title, subtitle].join(': ')}
 	description={description}
 	keywords={tags}
 	author={author}>
