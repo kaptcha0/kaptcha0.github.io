@@ -1,7 +1,7 @@
 ---
 title: "New Research: Biologically Approximated Neural Network"
 subtitle: A proposition to new AI research
-description:
+description: ""
 published: true
 date: 2026-03-24
 tags:
