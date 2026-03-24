@@ -34,8 +34,6 @@ My goal was to try to use this new architecture to create a model that can accom
 ## publication
 After submission to the IB organization and getting my results back, I thought it would be best for the community to publish my research. I'm not a "professional" researcher, I'm just a boy with ideas, but I thought this idea was at least worth looking into more. If this idea indeed does have merit, it could be a revolutionary shift in the AI world, where LLMs could run locally on a budget smartphone. 
 
-I go into more detail as to the architecture and reasoning behind everything in the actual paper, so if you have any questions, please let me know. So without further ado, I present my research paper: **Mathematically Modeling a Biological Neural Network**
-
-![Mathematically Modeling a Biological Neural Network](/LBQ-730.pdf)
+I go into more detail as to the architecture and reasoning behind everything in the actual paper, so if you have any questions, please let me know. So without further ado, I present my research paper: [Mathematically Modeling a Biological Neural Network](/LBQ-730.pdf)
 
 I'm also including the complete metrics and logs from the run [here](/Combined%20Metrics.xlsx).
