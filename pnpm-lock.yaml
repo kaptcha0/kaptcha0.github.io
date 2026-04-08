@@ -34,8 +34,8 @@ importers:
         version: 5.9.3
     devDependencies:
       '@iconify-json/lucide':
-        specifier: ^1.2.90
-        version: 1.2.90
+        specifier: ^1.2.101
+        version: 1.2.101
       '@iconify/svelte':
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.53.5)
@@ -424,8 +424,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@iconify-json/lucide@1.2.90':
-    resolution: {integrity: sha512-dPn1pRhfBa9KR+EVpdyM1Rvw3T36hCKYxd6TxK1ifffiNt0f5yXx8ZVhqnzPH4Vkz87yLMj5xFCXomNrnzd2kQ==}
+  '@iconify-json/lucide@1.2.101':
+    resolution: {integrity: sha512-JUN7uuSLRG3GK/9c5b8cK9e7sL6EAWDaASIwBOd0zUeKS0ACcokJubo2RMQHyVUVpd8mYkrR3Zd2mkH9ghhw1Q==}
 
   '@iconify/svelte@4.2.0':
     resolution: {integrity: sha512-fEl0T7SAPonK7xk6xUlRPDmFDZVDe2Z7ZstlqeDS/sS8ve2uyU+Qa8rTWbIqzZJlRvONkK5kVXiUf9nIc+6OOQ==}
@@ -2648,7 +2648,7 @@ snapshots:
   '@esbuild/win32-x64@0.27.4':
     optional: true
 
-  '@iconify-json/lucide@1.2.90':
+  '@iconify-json/lucide@1.2.101':
     dependencies:
       '@iconify/types': 2.0.0
 
