@@ -14,7 +14,7 @@ tags:
 ---
 
 
-I've been building my homelab for the last couple of months, and it's been going well — with one persistent headache. My setup ended up spanning three separate configuration systems: Terraform for provisioning, NixOS for machine configuration, and Kubernetes for workloads. Two different formats, three different mental models, one source of truth that was anything but. I wanted to collapse all of that into a single, unified configuration. NixMesh is my attempt at that.
+I've been building my homelab for the last couple of months, and it's been going well — with one persistent headache. My setup ended up spanning three separate configuration systems: Terraform for provisioning, NixOS for machine configuration, and Kubernetes for workloads. Two different formats, three different mental models, one source of truth that was anything but. I wanted to collapse all of that into a single, unified configuration. [NixMesh](https://github.com/kaptcha0/nixmesh) is my attempt at that.
 ## motivation
 Over the last couple of months, I've been steadily [building my homelab](https://kaptcha.cc/blog/tag/homelab/) . While I have made good progress, I've experienced the headaches caused by my specific approach.
 
