@@ -15,7 +15,7 @@
     "astro": "^5.18.1",
     "astro-icon": "^1.1.5",
     "svelte": "^5.55.2",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
